@@ -1,22 +1,25 @@
-<?php 
-define("PATH_PROJET", $_SERVER['DOCUMENT_ROOT'] . "/php-routes");
-define("WEB_ROOT", "/php-routes");
+<?php
+define("PATH_PROJECT", $_SERVER['DOCUMENT_ROOT'] . "");
+define("WEB_ROOT", "");
+
 function dg($data)
 {
-    echo '<pre style="background-color: #000; color: #fff; padding: 10px">';
+    echo '<pre style="background-color: black; color: white; padding: 1rem; margin: 1rem 0">';
     var_dump($data);
-    echo '</pre>';
-};
+    echo "</pre>";
+}
 
 function dd($data)
 {
-    echo '<pre style="background-color: #000; color: #fff; padding: 10px">';
-    var_dump($data);
-    echo '</pre>';
+    dg($data);
     die();
-};
-function redirect($url){ 
-    header("location: " . WEBROOT . $url);
-    exit;
-
 }
+
+function redirect($url)
+{
+    require $url;
+//    header("Location: " . WEB_ROOT . $url);
+//    exit;
+    die();
+}
+   // http://localhost/php-routes/
